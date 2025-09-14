@@ -41,9 +41,8 @@ jobs:
                 file: ./src/Dockerfile
                 push: true
                 tags: 
-                  lucassis/encontros-tech:latest
-                  lucassis/encontros-tech:v${{ github.run_number }}
-
+                  -t lucassis/encontros-tech:latest /
+                  -t lucassis/encontros-tech:v${{ github.run_number }}
 
     CD:
         runs-on: ubuntu-latest
