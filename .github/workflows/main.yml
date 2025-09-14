@@ -34,15 +34,15 @@ jobs:
                 username: ${{ vars.DOCKERHUB_USERNAME }}
                 password: ${{ secrets.DOCKERHUB_TOKEN }}
 
-            - name: Build and push docker image
+            - name: Build and push Docker image
               uses: docker/build-push-action@v5
               with:
                 context: ./src
                 file: ./src/Dockerfile
                 push: true
-                tags: 
-                  -t lucassis/encontros-tech:latest
-                  -t lucassis/encontros-tech:v${{ github.run_number }}
+                tags: |
+                  lucassis/encontros-tech:latest
+                  lucassis/encontros-tech:v${{ github.run_number }}
 
     CD:
         runs-on: ubuntu-latest
